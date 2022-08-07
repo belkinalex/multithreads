@@ -1,0 +1,35 @@
+{
+  "name": "multithreads",
+  "version": "1.0.0",
+  "description": "testing different methods for multithreading",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "=18"
+  },
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belkinalex/multithreads.git"
+  },
+  "keywords": [
+    "nodejs",
+    "multithreading",
+    "fork",
+    "sync.js",
+    "noroutine"
+  ],
+  "author": "Alexander Belkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belkinalex/multithreads/issues"
+  },
+  "homepage": "https://github.com/belkinalex/multithreads#readme",
+  "dependencies": {
+    "async": "^3.2.4",
+    "noroutine": "^0.0.7"
+  }
+}
