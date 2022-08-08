@@ -2,6 +2,8 @@ import * as path from 'path';
 import { fileURLToPath } from 'node:url';
 import { fork } from 'child_process';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const startWorker = (worker, start, end) => new Promise((resolve, reject) => {
     worker.on('message', msg => resolve(msg.result));
     worker.on('error', reject);
@@ -13,7 +15,7 @@ const startWorker = (worker, start, end) => new Promise((resolve, reject) => {
 
 export const start = async (iterations, cpuCount) => {
     const piFunc = {};
-    for (let i = 1; i <= cpuCount; i += 1) piFunc[i] = fork(path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'pi.js'));
+    for (let i = 1; i <= cpuCount; i += 1) piFunc[i] = fork(path.resolve(__dirname, 'pi.js'));
 
     const chunk = Math.trunc(iterations / cpuCount);
     let promises = [];
